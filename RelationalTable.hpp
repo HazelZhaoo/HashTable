@@ -20,7 +20,7 @@ private:
     vector<pair<string,vector<string>>>rows;
     int capacity;
     const double loadThreshold;
-    int num_of_insertion; // TO KEEP TRACK OF THE INSERTION//
+    int num_of_insertion;
     
 public:
     RelationalTable(double loadThreshold = 0.5);
@@ -28,12 +28,14 @@ public:
     void addRow(const string values[] , int size);
     vector<string> removeRow(const string& pkValue);
     void setValue(const string& pkValue , const string& fieldName , const string& fieldValue);
-    string getValue(const string& pkValue , const string& fieldName);
-    void addField(const string& fieldName);
+    string getValue(const string& pkValue , const string& field);
+    void addField(const string& fieldName);//done debugging
     void removeField(const string& fieldName);
     int getSize() const;
     bool isEmpty(pair<string , vector<string>>cell);
     void rehash();
+    vector<string>getFieldNames() const;
+     
     
 };
 
